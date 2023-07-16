@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <script src="./main.js"></script>
     <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
     <title>Player</title>
 </head>
 <body>
     <div id="page-wrapper">
-        <button id="platformSwitch" current="twitch">Switch platforms</button>
-        <iframe id="twitch-player" class="player" src="https://player.twitch.tv/?channel=xqc&enableExtensions=false&muted=false&parent=127.0.0.1&player=popout&quality=720p60&volume=0.2" frameborder="0"></iframe>
-        <iframe id="twitch-chat" class="chat" src="https://www.giambaj.it/twitch/jchat/v2/?channel=xqc&bots=true&hide_commands=true&size=1&font=2" frameborder="0"></iframe>
+        <div id="sidebar">
+            <button id="platformSwitch" current="twitch" onclick="switchPlatform()">Switch platforms</button>
+            <img src="./images/kick.png" alt="kick-icon" id="kick-icon">
+        </div>
+        <iframe id="twitch-player" class="player" src="" frameborder="0"></iframe>
+        <iframe id="twitch-chat" class="chat" src="" frameborder="0"></iframe>
 
 
         <!-- KICK PLAYER
-        <iframe id="kick-player" class="player" src="https://player.kick.com/squin7y?autoplay=true" frameborder="0"></iframe>
-        <iframe id="kick-chat" class="chat" src="https://kicktools.ayybabz.com/fusion_chat/fusion-chat.html?kick=squin7y&twitch=&youtube=&font=Roboto&fontSize=medium&fontShadow=shadow-na&fontColor=%23ffffff&theme=kickgreen&fontCase=none&timestamp=on&platformBadges=on&userBadges=on&bots=on&highlight=on&fadeTime=30" frameborder="0"></iframe> -->
+        <iframe id="kick-player" class="player" src="https://player.kick.com/xqc?autoplay=true" frameborder="0"></iframe>
+        <iframe id="kick-chat" class="chat" src="https://kicktools.ayybabz.com/fusion_chat/fusion-chat.html?kick=xqc&twitch=&youtube=&font=Roboto&fontSize=medium&fontShadow=shadow-na&fontColor=%23ffffff&theme=kickgreen&fontCase=none&timestamp=on&platformBadges=on&userBadges=on&bots=on&highlight=on&fadeTime=30" frameborder="0"></iframe> -->
     </div>
+    <script src="./main.js"></script>
 
 </body>
 </html>

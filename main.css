@@ -11,9 +11,15 @@ html, body{
     height: 100%;
 }
 
+#kick-icon{
+    position: absolute;
+    height: 10%;
+    opacity: 0;
+}
+
 #platformSwitch{
     position: absolute;
-    margin-left: 85%;
+    margin-left: 5%;
     background: linear-gradient(to right,#9146ff ,#6700ff);
     background-color: #9146ff;
     color: #fff;
