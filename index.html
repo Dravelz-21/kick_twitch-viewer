@@ -10,8 +10,14 @@
 </head>
 <body>
     <div id="page-wrapper">
-        <iframe id="twitch-player" src="https://player.twitch.tv/?channel=xqc&enableExtensions=false&muted=false&parent=127.0.0.1&player=popout&quality=720p60&volume=0.2" frameborder="0"></iframe>
-        <iframe id="twitch-chat" src="https://www.giambaj.it/twitch/jchat/v2/?channel=xqc&bots=true&hide_commands=true&size=1&font=2" frameborder="0"></iframe>
+        <button id="platformSwitch" current="twitch">Switch platforms</button>
+        <iframe id="twitch-player" class="player" src="https://player.twitch.tv/?channel=xqc&enableExtensions=false&muted=false&parent=127.0.0.1&player=popout&quality=720p60&volume=0.2" frameborder="0"></iframe>
+        <iframe id="twitch-chat" class="chat" src="https://www.giambaj.it/twitch/jchat/v2/?channel=xqc&bots=true&hide_commands=true&size=1&font=2" frameborder="0"></iframe>
+
+
+        <!-- KICK PLAYER
+        <iframe id="kick-player" class="player" src="https://player.kick.com/squin7y?autoplay=true" frameborder="0"></iframe>
+        <iframe id="kick-chat" class="chat" src="https://kicktools.ayybabz.com/fusion_chat/fusion-chat.html?kick=squin7y&twitch=&youtube=&font=Roboto&fontSize=medium&fontShadow=shadow-na&fontColor=%23ffffff&theme=kickgreen&fontCase=none&timestamp=on&platformBadges=on&userBadges=on&bots=on&highlight=on&fadeTime=30" frameborder="0"></iframe> -->
     </div>
 
 </body>

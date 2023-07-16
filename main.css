@@ -11,10 +11,41 @@ html, body{
     height: 100%;
 }
 
-#twitch-player{
+#platformSwitch{
+    position: absolute;
+    margin-left: 85%;
+    background: linear-gradient(to right,#9146ff ,#6700ff);
+    background-color: #9146ff;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 18px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 14px 15px;
+    border: 0px solid #000;
+    border-radius: 10px;
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+#platformSwitch:hover{
+    background: linear-gradient(to right,#9f68ff ,#7f51ff);
+    background-color: #9f68ff;
+    opacity: 1;
+    transition: opacity 0.2s;
+    
+}
+
+#platformSwitch:active{
+    transform: scale(0.95);
+}
+
+.player{
     flex: 50 1 auto;
 }
 
-#twitch-chat{
+.chat{
     flex: 1 1 auto;
 }
