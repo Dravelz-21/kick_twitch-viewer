@@ -4,7 +4,7 @@ Webpage with embedded Twitch player and chat
 ## Features
 
 - Change channel & stream quality. (TODO)
-- (Optional) Set a second channel to automatically switch stream to Kick if twitch stream goes offline. (TODO)
+- Automatically switch stream to Kick if twitch stream goes offline. (checks the same username that you enter in the prompt.)
 - 3rd party chat supports 7TV,BTTV,FFZ emotes.
 ## Why
 
