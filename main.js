@@ -7,7 +7,7 @@ let platformSwitchBtn = document.getElementById('platformSwitch');
 function selectChannel() {
     let alert = prompt("Channel selector", "xqc");
     channelID = alert
-    document.getElementById('twitch-player').src = `https://player.twitch.tv/?channel=${channelID}&enableExtensions=false&muted=false&parent=netlify.app&player=popout&quality=720p60&volume=0.2`;
+    document.getElementById('twitch-player').src = `https://player.twitch.tv/?channel=${channelID}&enableExtensions=false&muted=false&parent=twitch-viewer-demo.netlify.app&player=popout&quality=720p60&volume=0.2`;
     document.getElementById('twitch-chat').src = `https://www.giambaj.it/twitch/jchat/v2/?channel=${channelID}&bots=true&hide_commands=true&size=1&font=2`;
 };
 
@@ -44,7 +44,7 @@ function switchPlatform() {
         platformSwitchBtn.style.opacity = 0;
         alreadySwitched = true;
     } else if(platformSwitchBtn.getAttribute('current') === 'kick') {
-        document.getElementById('twitch-player').src = `https://player.twitch.tv/?channel=${channelID}&enableExtensions=false&muted=false&parent=netlify.app&player=popout&quality=720p60&volume=0.2`;
+        document.getElementById('twitch-player').src = `https://player.twitch.tv/?channel=${channelID}&enableExtensions=false&muted=false&parent=twitch-viewer-demo.netlify.app&player=popout&quality=720p60&volume=0.2`;
         document.getElementById('twitch-chat').src = `https://www.giambaj.it/twitch/jchat/v2/?channel=${channelID}&bots=true&hide_commands=true&size=1&font=2`;
         platformSwitchBtn.setAttribute("current", "twitch");
         document.getElementById('kick-icon').style.opacity = 0;
