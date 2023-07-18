@@ -1,6 +1,8 @@
 # twitch-viewer
 Webpage with embedded Twitch player and chat
 
+[DEMO](https://twitch-viewer-demo.netlify.app/)
+
 ## Features
 
 - Change channel & stream quality. (TODO)
