@@ -2,7 +2,7 @@ var channelID = 'xqc';
 let live = false;
 let alreadySwitched = false;
 let platformSwitchBtn = document.getElementById('platformSwitch');
-let parentURL = "127.0.0.1";
+let parentURL = "twitch-viewer-demo.netlify.app";
 
 function selectChannel() {
     let alert = prompt("Channel selector", "xqc");
