@@ -2,7 +2,8 @@ var channelID = 'xqc';
 let live = false;
 let alreadySwitched = false;
 let platformSwitchBtn = document.getElementById('platformSwitch');
-let parentURL = "twitch-viewer-demo.netlify.app";
+let parentURL = "twitch-viewer-demo.netlify.app"; // for the demo page
+// let parentURL = "127.0.0.1"; // for local developement
 
 function selectChannel() {
     let alert = prompt("Channel selector", "xqc");
@@ -42,8 +43,7 @@ function setOffline() {
 function switchPlatform() {
     if(platformSwitchBtn.getAttribute('current') === 'twitch') {
         document.getElementById('twitch-player').src = `https://player.kick.com/${channelID}?autoplay=true&muted=false&allowfullscreen=true`;
-        document.getElementById('twitch-chat').src = `https://kicktools.ayybabz.com/fusion_chat/fusion-chat.html?kick=${channelID}&twitch=&youtube=&font=Roboto&fontSize=Large&fontShadow=shadow-na&fontColor=%23ffffff&theme=nofade&fontCase=none&timestamp=off&platformBadges=off&userBadges=on&bots=off&highlight=on&fade=on&fadeTime=30`;
-        document.getElementById('twitch-chat').src = `https://kicktools.ayybabz.com/fusion_chat/fusion-chat.html?kick=${channelID}&twitch=&youtube=&font=Roboto&fontSize=medium&fontShadow=shadow-na&fontColor=%23ffffff&theme=kickgreen&fontCase=none&timestamp=on&platformBadges=on&userBadges=on&bots=on&highlight=on&fadeTime=30`;
+        document.getElementById('twitch-chat').src = `https://kick-chat.corard.tv/v1/chat?user=${channelID}&font-size=Small&stroke=Off&animate=false&badges=true&commands=false&bots=false`;
         platformSwitchBtn.setAttribute("current", "kick");
         platformSwitchBtn.style.opacity = 0;
         alreadySwitched = true;
