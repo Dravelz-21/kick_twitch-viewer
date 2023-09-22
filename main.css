@@ -40,6 +40,9 @@ html, body{
     animation: fadeIn 0.2s forwards;
 }
 
+#alertBox {
+    display: none;
+}
 
 @keyframes fadeIn {
     from {opacity: 0;}

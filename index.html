@@ -9,15 +9,20 @@
 </head>
 <body>
     <div id="page-wrapper">
-        <div id="alertBox"></div>
         <button id="channelSelector" onclick="channelSelector()">Change Channel</button>
         <button id="platformSwitch" current="twitch"></button>
         
         <iframe id="twitch-player" class="player" src="" frameborder="0"></iframe>
         <iframe id="twitch-chat" class="chat" src="" frameborder="0"></iframe>
 
+        <div id="alertBox"></div>
 
     </div>
+    <script src="https://raw.githubusercontent.com/richtr/NoSleep.js/master/dist/NoSleep.min.js"></script>
+    <script>
+        var noSleep = new NoSleep();
+        noSleep.enable();
+    </script>
     <script src="./main.js"></script>
 </body>
 </html>

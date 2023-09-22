@@ -3,7 +3,9 @@ let volume = 0.5; // can be "0.1" to "1" for the twitch player
 let quality = "720p60";
 let live = false; // true if live on Kick.com
 let alreadySwitched = false; // false if on twitch player true if on Kick.com player
-var kickCheck = 10000; // how often the live check updates for Kick.com (ms)
+let kickCheck = 1000; // how often the live check updates for Kick.com (ms)
+var kickCount = 10;
+var interval;
 let platformSwitchBtn = document.getElementById('platformSwitch'); // was a button to change to Kick, now used for determining if player is Twitch or Kick (this is a bad implementation)
 let channelBtn = document.getElementById('channelSelector'); 
 const queryString = window.location.search;
@@ -54,24 +56,32 @@ function switchPlatform() {
 
 function platformCheck() {
     checkStream(channelID);
-    if(live){
-        if(!alreadySwitched){
+
+    if(alreadySwitched) {
+        if(!live) {
             switchPlatform();
         }
-    } else if(!live){
-        if(alreadySwitched){
+    } else if(!alreadySwitched) {
+        if(live) {
             switchPlatform();
         }
     }
 }
 
-setInterval(() => {
+function startKickCheck(){
+    clearInterval(interval);
+    kickCount--;
     platformCheck();
-}, kickCheck);
+    if(kickCount <= 0){
+        kickCheck = 10000
+        interval = setInterval(startKickCheck, kickCheck);
+    } else {
+        interval = setInterval(startKickCheck, kickCheck);
+        }
+}
 
-setInterval(() => {
-    wlock();
-}, 10000);
+startKickCheck();
+
 
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
@@ -115,8 +125,12 @@ function deleteCookie(name) {
 }
 function channelSelector() {
     deleteCookie("channel=")
+    clearInterval(interval);
+    kickCount = 10;
+    kickCheck = 1000;
     let channel = prompt("Set Channel", "xqc");
     setCookie("channel", channel, 365);
+    startKickCheck();
     checkCookie();
 }
 
@@ -126,6 +140,7 @@ function buildTwitch(channel, quality, volume) {
     platformSwitchBtn.setAttribute("current", "twitch");
     alreadySwitched = false;
     channelID = channel;
+    
 }
 
 function buildKick(channel) {
@@ -170,15 +185,5 @@ if( queryString == "" || queryString == null || queryString == "null") {
 async function nullCheck(){
     if(channelID == null || channelID == "null" || channelID == ""){
     buildTwitch("monstercat", "360p30", "0.5")
-    }
-}
-
-async function wlock() {
-    // Wakelock attempt for mobile devices works in chrome on android and in safari on iOS 16.4+
-    try {
-    wakeLock = await navigator.wakeLock.request("screen");
-    console.log("Wakelock activated")
-    } catch(e) {
-    console.log(`Wakelock failed to activate ${e}`)
     }
 }
