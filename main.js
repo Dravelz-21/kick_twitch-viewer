@@ -10,16 +10,6 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 document.body.onload = nullCheck;
 
-let wakeLock = null;
-
-// Wakelock attempt for mobile devices works in chrome on android and in safari on iOS 16.4+
-try {
-    wakeLock = await navigator.wakeLock.request("screen");
-    console.log("Wakelock activated")
-} catch(e) {
-    console.log(`Wakelock failed to activate ${e}`)
-}
-
 
 // Parent url needed for the twitch player embed
 let parentURL = "kick-twitch-viewer.netlify.app"; // for the demo page
@@ -79,6 +69,9 @@ setInterval(() => {
     platformCheck();
 }, kickCheck);
 
+setInterval(() => {
+    wlock();
+}, 10000);
 
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
@@ -177,5 +170,15 @@ if( queryString == "" || queryString == null || queryString == "null") {
 async function nullCheck(){
     if(channelID == null || channelID == "null" || channelID == ""){
     buildTwitch("monstercat", "360p30", "0.5")
+    }
+}
+
+async function wlock() {
+    // Wakelock attempt for mobile devices works in chrome on android and in safari on iOS 16.4+
+    try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    console.log("Wakelock activated")
+    } catch(e) {
+    console.log(`Wakelock failed to activate ${e}`)
     }
 }
