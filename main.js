@@ -9,6 +9,18 @@ let channelBtn = document.getElementById('channelSelector');
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 document.body.onload = nullCheck;
+
+let wakeLock = null;
+
+// Wakelock attempt for mobile devices works in chrome on android and in safari on iOS 16.4+
+try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    console.log("Wakelock activated")
+} catch(e) {
+    console.log(`Wakelock failed to activate ${e}`)
+}
+
+
 // Parent url needed for the twitch player embed
 let parentURL = "kick-twitch-viewer.netlify.app"; // for the demo page
 // let parentURL = "127.0.0.1"; // for local developement
