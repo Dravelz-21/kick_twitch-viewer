@@ -3,7 +3,7 @@ let volume = 0.5; // can be "0.1" to "1" for the twitch player
 let quality = "720p60";
 let live = false; // true if live on Kick.com
 let alreadySwitched = false; // false if on twitch player true if on Kick.com player
-var kickCheck = 2000; // how often the live check updates for Kick.com (ms)
+var kickCheck = 10000; // how often the live check updates for Kick.com (ms)
 let platformSwitchBtn = document.getElementById('platformSwitch'); // was a button to change to Kick, now used for determining if player is Twitch or Kick (this is a bad implementation)
 let channelBtn = document.getElementById('channelSelector'); 
 const queryString = window.location.search;
@@ -13,7 +13,7 @@ document.body.onload = nullCheck;
 let parentURL = "kick-twitch-viewer.netlify.app"; // for the demo page
 // let parentURL = "127.0.0.1"; // for local developement
 
-// fuction to check if the channel is live on Kick.com through the API every 2s
+// fuction to check if the channel is live on Kick.com through the API every 10s
 async function checkStream(channel) {
     try {
         let response = await fetch(`https://kick.com/api/v2/channels/${channel}`);
