@@ -10,8 +10,8 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 document.body.onload = nullCheck;
 // Parent url needed for the twitch player embed
-let parentURL = "kick-twitch-viewer.netlify.app"; // for the demo page
-// let parentURL = "127.0.0.1"; // for local developement
+// let parentURL = "kick-twitch-viewer.netlify.app"; // for the demo page
+let parentURL = "127.0.0.1"; // for local developement
 
 // fuction to check if the channel is live on Kick.com through the API every 2s
 async function checkStream(channel) {
@@ -125,7 +125,8 @@ function buildTwitch(channel, quality, volume) {
 
 function buildKick(channel) {
     document.getElementById('twitch-player').src = `https://player.kick.com/${channel}?autoplay=true&muted=false&allowfullscreen=true`;
-    document.getElementById('twitch-chat').src = `https://kick-chat.corard.tv/v1/chat?user=${channel}&font-size=Small&stroke=Off&animate=false&badges=true&commands=false&bots=false`;
+    // document.getElementById('twitch-chat').src = `https://kick-chat.corard.tv/v1/chat?user=${channel}&font-size=Small&stroke=Off&animate=false&badges=true&commands=false&bots=false`;
+    document.getElementById('twitch-chat').src = `https://chat-overlay.matinaniss.com/?channel=${channel}&sevenTVCosmeticsEnabled=true&sevenTVEmotesEnabled=true&theme=dark&textShadow=small&textSize=medium&animation=none&showPinEnabled=false&textBackgroundEnabled=true`
     platformSwitchBtn.setAttribute("current", "kick");
     alreadySwitched = true;
     channelID = channel;

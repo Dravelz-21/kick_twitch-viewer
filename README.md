@@ -28,4 +28,4 @@ Clone the repo and use a webserver to host it. Keep in mind the twitch player ne
 
 [Giambaj](https://www.giambaj.it/) for the [Twitch chat overlay](https://www.giambaj.it/twitch/jchat/).
 
-[Corard](https://github.com/Corard) for the [Kick chat overlay](https://corard.tv/projects/kick-chat).
+[matinaniss](https://www.matinaniss.com/) for the [Kick chat overlay](https://chat-overlay.matinaniss.com/).
