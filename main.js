@@ -124,7 +124,7 @@ function buildTwitch(channel, quality, volume) {
 }
 
 function buildKick(channel) {
-    document.getElementById('twitch-player').src = `https://player.kick.com/${channel}?autoplay=true&muted=false&allowfullscreen=true`;
+    document.getElementById('twitch-player').src = `https://player.kick.com/${channel}?muted=false&autoplay=true&allowfullscreen=true`;
     // document.getElementById('twitch-chat').src = `https://kick-chat.corard.tv/v1/chat?user=${channel}&font-size=Small&stroke=Off&animate=false&badges=true&commands=false&bots=false`;
     document.getElementById('twitch-chat').src = `https://chat-overlay.matinaniss.com/?channel=${channel}&sevenTVCosmeticsEnabled=true&sevenTVEmotesEnabled=true&theme=dark&textShadow=small&textSize=medium&animation=none&showPinEnabled=false&textBackgroundEnabled=true`
     platformSwitchBtn.setAttribute("current", "kick");
