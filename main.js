@@ -162,7 +162,7 @@ if( queryString == "" || queryString == null || queryString == "null") {
 
 
 async function nullCheck(){
-    if(channelID == null || channelID == "null"){
+    if(channelID == null || channelID == "null" || channelID == ""){
     buildTwitch("monstercat", "360p30", "0.5")
     }
 }
