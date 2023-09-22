@@ -10,8 +10,8 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 document.body.onload = nullCheck;
 // Parent url needed for the twitch player embed
-// let parentURL = "kick-twitch-viewer.netlify.app"; // for the demo page
-let parentURL = "127.0.0.1"; // for local developement
+let parentURL = "kick-twitch-viewer.netlify.app"; // for the demo page
+// let parentURL = "127.0.0.1"; // for local developement
 
 // fuction to check if the channel is live on Kick.com through the API every 2s
 async function checkStream(channel) {
