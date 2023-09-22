@@ -26,7 +26,7 @@ html, body{
     animation-delay: 5s;
     position: absolute;
     display: inline-block;
-    left: 83%;
+    left: 0%;
     border: none;
     color: white;
     padding: 20px 105px;
@@ -51,10 +51,28 @@ html, body{
     to {opacity: 0;}
 }
 
-.player{
-    flex: 50 1 auto;
-}
 
-.chat{
-    flex: 1 1 auto;
+@media only screen and (max-aspect-ratio: 1/1){
+    .player{
+        flex: 1 1 auto;
+    }
+
+    .chat{
+        flex: 6 1 auto;
+    }
+    #page-wrapper {
+        flex-flow: column;
+    }
+    #channelSelector{
+        left: 0%;
+    }
+}
+@media only screen and (min-aspect-ratio: 1/1){
+    .player{
+        flex: 50 1 auto;
+    }
+
+    .chat{
+        flex: 1 1 auto;
+    }
 }
