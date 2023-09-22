@@ -1,4 +1,4 @@
-# twitch-viewer
+# Kick and Twitch viewer
 Webpage with embedded Twitch & Kick player and chat
 
 [DEMO](https://kick-twitch-viewer.netlify.app)
